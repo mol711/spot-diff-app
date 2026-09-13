@@ -138,8 +138,8 @@ const visibleTodos = computed(() => {
       todo.assignee.toLocaleLowerCase("ja").includes(query);
     const matchesStatus =
       statusFilter.value === "all" ||
-      (statusFilter.value === "done" && !todo.isCompleted) ||
-      (statusFilter.value === "open" && todo.isCompleted);
+      (statusFilter.value === "done" && todo.isCompleted) ||
+      (statusFilter.value === "open" && !todo.isCompleted);
 
     return matchesQuery && matchesStatus;
   });
