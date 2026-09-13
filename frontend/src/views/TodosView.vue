@@ -332,12 +332,9 @@ async function toggleTodo(todo: Todo) {
   errorMessage.value = "";
 
   try {
-    console.log("start");
     const updated = await updateTodo(todo.id, { isCompleted: !todo.isCompleted });
-    console.log("updated");
     replaceTodo(updated);
   } catch (error) {
-    console.log(error);
     errorMessage.value = error instanceof Error ? error.message : "状態の更新に失敗しました。";
   }
 }
